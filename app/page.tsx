@@ -4,6 +4,7 @@ import { Plus, Leaf } from "lucide-react";
 import FilterBar from "./filter-bar";
 import TodoItem from "./todo-item";
 import OverviewStats from "./overview-stats";
+export const dynamic = "force-dynamic"
 
 type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
