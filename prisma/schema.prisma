@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("DATABASE_URL")
+}
+
+// Model Todo như yêu cầu
+model Todo {
+  id           String    @id @default(uuid())
+  text         String
+  deadline     DateTime?
+  status       String    @default("pending") // pending | done
+  finishedTime DateTime?
+  userId       String    // ID lấy từ Clerk để map dữ liệu
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
